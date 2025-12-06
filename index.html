@@ -204,13 +204,7 @@
             margin-bottom: 15px;
         }
         
-        .price {
-            font-weight: bold;
-            color: #8B4513;
-            font-size: 18px;
-            margin-bottom: 15px;
-            display: block;
-        }
+        /* تم إزالة سعر */
         
         /* قسم المعلومات */
         .info {
@@ -371,8 +365,7 @@
                     <div class="product-info">
                         <h3>الابلاكاش مربع</h3>
                         <p>خشب ابلاكاش عالي الجودة بمقاسات متنوعة</p>
-                        <span class="price">السعر: يبدأ من 150 جنيه</span>
-                        <button class="btn order-btn" data-product="الابلاكاش مربع">اطلب الآن</button>
+                        <button class="btn price-btn" data-product="الابلاكاش مربع">عرض السعر</button>
                     </div>
                 </div>
                 
@@ -384,8 +377,7 @@
                     <div class="product-info">
                         <h3>خشب سويد</h3>
                         <p>خشب سويد طبيعي بجودة فائقة</p>
-                        <span class="price">السعر: يبدأ من 200 جنيه</span>
-                        <button class="btn order-btn" data-product="خشب سويد">اطلب الآن</button>
+                        <button class="btn price-btn" data-product="خشب سويد">عرض السعر</button>
                     </div>
                 </div>
                 
@@ -397,8 +389,7 @@
                     <div class="product-info">
                         <h3>MDF</h3>
                         <p>ألواح MDF بمقاسات وألوان متنوعة</p>
-                        <span class="price">السعر: يبدأ من 120 جنيه</span>
-                        <button class="btn order-btn" data-product="MDF">اطلب الآن</button>
+                        <button class="btn price-btn" data-product="MDF">عرض السعر</button>
                     </div>
                 </div>
                 
@@ -410,8 +401,7 @@
                     <div class="product-info">
                         <h3>ألواح الكونتر</h3>
                         <p>ألواح كونتر بمقاسات وألوان متنوعة</p>
-                        <span class="price">السعر: يبدأ من 180 جنيه</span>
-                        <button class="btn order-btn" data-product="الواح الكونتر">اطلب الآن</button>
+                        <button class="btn price-btn" data-product="الواح الكونتر">عرض السعر</button>
                     </div>
                 </div>
             </div>
@@ -440,7 +430,7 @@
                     <h3>معلومات الاتصال</h3>
                     <p>العنوان: شارع الكنيسة المطرانية، أسيوط</p>
                     <p>الهاتف: 201025925324</p>
-                    <p>البريد الإلكتروني: makarth79@gmail.com</p>
+                    <p> البريد الإلكتروني:makarth79 @gmail.com</p>
                 </div>
                 
                 <div class="footer-section">
@@ -458,20 +448,20 @@
     </footer>
 
     <!-- زر الواتساب -->
-    <a href="https://wa.me/201117505579" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/201025925324" class="whatsapp-btn" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // إضافة وظيفة لأزرار الطلب
-        document.querySelectorAll('.order-btn').forEach(button => {
+        // إضافة وظيفة لأزرار عرض السعر
+        document.querySelectorAll('.price-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const productName = this.getAttribute('data-product');
-                const message = `مرحباً، أريد طلب ${productName} من شركة أولاد مقار لتجارة الأخشاب`;
-                const whatsappUrl = `https://wa.me/201117505579?text=${encodeURIComponent(message)}`;
+                const message = `مرحباً، أريد معرفة سعر ${productName} من شركة أولاد مقار لتجارة الأخشاب`;
+                const whatsappUrl = `https://wa.me/201025925324?text=${encodeURIComponent(message)}`;
                 window.open(whatsappUrl, '_blank');
             });
         });
     </script>
 </body>
-  </html>
+                        </html>
