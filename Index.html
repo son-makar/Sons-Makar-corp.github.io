@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة أولاد مقار لتجارة الأخشاب - أجود أنواع الأخشاب</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* الهيدر */
+        header {
+            background: linear-gradient(to right, #8B4513, #A0522D);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-left: 10px;
+            font-size: 28px;
+            color: #FFD700;
+        }
+        
+        .logo span {
+            color: #FFD700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            color: #FFD700;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* قسم الهيرو */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/3738083/pexels-photo-3738083.jpeg') no-repeat center center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #8B4513;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .btn:hover {
+            background: #A0522D;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* قسم المنتجات */
+        .products {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: #8B4513;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #8B4513;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 10px;
+            color: #8B4513;
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #8B4513;
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        /* قسم المعلومات */
+        .info {
+            background: #8B4513;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .info h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .info p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* الفوتر */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #FFD700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #FFD700;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+        }
+        
+        /* زر الواتساب */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* التجاوبية */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><i class="fas fa-tree"></i> شركة <span>أولاد مقار</span> لتجارة الأخشاب</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#products">المنتجات</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم الهيرو -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>أفضل أنواع الأخشاب بجودة عالية</h1>
+                <p>نقدم لكم أجود أنواع الأخشاب بأسعار تنافسية وخدمة توصيل سريعة</p>
+                <a href="#products" class="btn">تصفح المنتجات</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المنتجات -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">منتجاتنا</h2>
+            <div class="products-grid">
+                <!-- منتج 1 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://i.postimg.cc/2S8SpmJV/3mm-B-BB-Baltic-Birch-Plywood-5x5-laser-cnc-3PLY-1200x1200.png" alt="الابلاكاش مربع">
+                    </div>
+                    <div class="product-info">
+                        <h3>الابلاكاش مربع</h3>
+                        <p>خشب ابلاكاش عالي الجودة بمقاسات متنوعة</p>
+                        <span class="price">السعر: يبدأ من 150 جنيه</span>
+                        <button class="btn order-btn" data-product="الابلاكاش مربع">اطلب الآن</button>
+                    </div>
+                </div>
+                
+                <!-- منتج 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://i.postimg.cc/G2PWhTTd/swedish_wood.png" alt="خشب سويد">
+                    </div>
+                    <div class="product-info">
+                        <h3>خشب سويد</h3>
+                        <p>خشب سويد طبيعي بجودة فائقة</p>
+                        <span class="price">السعر: يبدأ من 200 جنيه</span>
+                        <button class="btn order-btn" data-product="خشب سويد">اطلب الآن</button>
+                    </div>
+                </div>
+                
+                <!-- منتج 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://i.postimg.cc/QdHZkMw4/1_768_768_r_mdf_braun_unbeschichtet.png" alt="MDF">
+                    </div>
+                    <div class="product-info">
+                        <h3>MDF</h3>
+                        <p>ألواح MDF بمقاسات وألوان متنوعة</p>
+                        <span class="price">السعر: يبدأ من 120 جنيه</span>
+                        <button class="btn order-btn" data-product="MDF">اطلب الآن</button>
+                    </div>
+                </div>
+                
+                <!-- منتج 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://i.postimg.cc/z3mHSfFP/Glossy-White-18-mm-Melamine-Block-Board-Furniture-Cabinet-Grade-Melamine-Block-Board-for-Furniture.jpg">
+                    </div>
+                    <div class="product-info">
+                        <h3>ألواح الكونتر</h3>
+                        <p>ألواح كونتر بمقاسات وألوان متنوعة</p>
+                        <span class="price">السعر: يبدأ من 180 جنيه</span>
+                        <button class="btn order-btn" data-product="الواح الكونتر">اطلب الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المعلومات -->
+    <section class="info">
+        <div class="container">
+            <h2>لماذا تختار شركة أولاد مقار؟</h2>
+            <p>نحن نقدم أجود أنواع الأخشاب بأسعار تنافسية، مع خدمة توصيل سريعة وضمان الجودة. فريقنا من الخبراء جاهز لمساعدتك في اختيار أفضل المنتجات لاحتياجاتك.</p>
+            <a href="#contact" class="btn">اتصل بنا الآن</a>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>عن الشركة</h3>
+                    <p>شركة أولاد مقار لتجارة الأخشاب، خبرة أكثر من 20 عاماً في مجال تجارة الأخشاب بأنواعها.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>معلومات الاتصال</h3>
+                    <p>العنوان: شارع الكنيسة المطرانية، أسيوط</p>
+                    <p>الهاتف: 201117505579</p>
+                    <p>البريد الإلكتروني: info@awladmakar.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <a href="#home">الرئيسية</a>
+                    <a href="#products">المنتجات</a>
+                    <a href="#contact">اتصل بنا</a>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>جميع الحقوق محفوظة &copy; 2023 شركة أولاد مقار لتجارة الأخشاب</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- زر الواتساب -->
+    <a href="https://wa.me/201117505579" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // إضافة وظيفة لأزرار الطلب
+        document.querySelectorAll('.order-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.getAttribute('data-product');
+                const message = `مرحباً، أريد طلب ${productName} من شركة أولاد مقار لتجارة الأخشاب`;
+                const whatsappUrl = `https://wa.me/201117505579?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
